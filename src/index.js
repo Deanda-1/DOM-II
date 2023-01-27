@@ -28,8 +28,8 @@ import './less/index.less'
         });
     })
 
- const foucs = document.querySelector('.focus')
-    foucs.addEventListener(function(navItem) {
+ const focus = document.querySelector('.focus')
+    focus.addEventListener(function(navItem) {
         onclick.MouseEvent.call.forEach(navItem => {
             'Deal with the ${navItem} until finished.';
         });
