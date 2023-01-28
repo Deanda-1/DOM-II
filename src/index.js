@@ -1,72 +1,47 @@
 import './less/index.less'
 
 // Your code goes here!
- const mouseover = document.querySelector('.mouseover')
-   mouseover.addEventListenerAll(function(nav) {
-    MouseEvent.call.array.forEach(element => {
-        'The ${nav-item} opens up when the mouse hovers over the ${nav-item}'; 
-    });
-   })   
- const keydown = document.querySelector('.keydown')
-    keydown.addEventListener(function(nav) {
-        keyDownEvent.call.onclick.MouseEvent.forEach(element => {
-            'The ${nav-item} will engage when the mouse clicks on the ${nav-item}';
-        });
+ window.onload = function (event) {
+    console.log(`event ${event.type} fired! Ready to go`)
+    const heading = document.querySelector('h1')
+    heading.textContent = "READY TO GO!!"
+
+    window.addEventListener('copy', () => {
+        navigator.clipboard.readText()
+        .then(text => {
+            heading.textContent += text
+        })
     })
 
- const wheel = document.querySelector('.wheel')
-    wheel.addEventListener(function(nav) {
-        WheelEvent.call.MouseEvent.forEach(navItem => {
-            'Scroll through each ${nav-item} when the mouse is clicked on it.';
-        });
+    document.body.addEventListener('click', event => {
+        event.target.classList.toggle('mirror')
     })
 
- const load = document.querySelector('.load')
-    load.addEventListener(function(nav) {
-        loadOptions.onclick.MouseEvent.call.forEach(navItem => {
-            'Upload ${nav-item} when clicked on.';
-        });
+    document.body.addEventListener('dblclick', event => {
+        event.target.outerHTML = ''
     })
 
- const focus = document.querySelector('.focus')
-    focus.addEventListener(function(navItem) {
-        onclick.MouseEvent.call.forEach(navItem => {
-            'Deal with the ${navItem} until finished.';
-        });
+    window.addEventListener('keydown', event => {
+        if (event.key == 6) {
+            document.body.innerHTML = "<h1> YOU RAN ORDER </h1>"
+        }
     })
 
- const resize = document.querySelector('.resize')
-    resize.addEventListener(function(h1, h2, p) {
-        element.addEventListener('click', (event, h1) => { event.target.style.fontSize = '40px'; });
-        element.addEventListener('click', (event,h2) => { event.target.style.fontSize = '20px'; });
-        element.addEventListener('click', (event, p) => { event.target.style.fontSize = '10px'; });
+    document.body.addEventListener('mousemove', event => {
+        const {clientX, clientY} = event 
     })
 
- const scroll = document.querySelector('.scroll')
-    scroll.addEventListener(function(navItem) {
-        scrollTo.name.MouseEvent.call.forEach(navItem => {
-            '${navItem} can be studied and read carfully.';
-        });
-    })
-
- const select = document.querySelector('.select')
-    select.addEventListener(function(navItem) {
-        Selection.call.navItem.MouseEvent.element.forEach(navItem => {
-            'Click on the ${select} section to look at and study.';
-        });
-    })
-
- const dbclick = document.querySelector('.dbclick')
-    dbclick.addEventListener(function(clickMe) {
-        object.ondblclick = function() { clickMe };
-        object.addEventListener("dblclick", clickMe);   
-    })
-
- const dragDrop = document.querySelector('.dragDrop')
-    dragDrop.addEventListener(function(img) {
-        img.addEventListenerAll.array.call.MouseEvent.forEach(img => {
-            '${img} add by ${dragDrop}';
-        });
-    })
+    const destination = document.querySelectorAll{'.destination'}
+    for (let destination of destinations) {
+        destination.addEventListener('mouseenter', () => {
+            destination.style.fontWeight = 'bold'
+        })
+        destination.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+                destination.style.fontWeight = 'initial'
+            }, 500)
+        })
+    }
+ }
 
 
